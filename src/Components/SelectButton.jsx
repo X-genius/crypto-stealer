@@ -6,8 +6,8 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid gold',
     borderRadius: 5,
     padding: 10,
-    paddingLeft: 15,
-    paddingRight: 15,
+    paddingLeft: 20,
+    paddingRight: 20,
     fontFamily: 'Montserrat',
     cursor: 'pointer',
     '&:hover': {
@@ -15,6 +15,18 @@ const useStyles = makeStyles((theme) => ({
       color: 'black',
     },
     width: '22%',
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: 10,
+      paddingRight: 10,
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: 10,
+      paddingRight: 10,
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: 10,
+      paddingRight: 10,
+    },
   },
 }));
 
