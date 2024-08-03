@@ -49,7 +49,6 @@ const darkTheme = createTheme({
 });
 
 const CoinInfo = ({ coin }) => {
-  console.log('coin ::', coin);
   const classes = useStyles();
   const { currency } = CryptoState();
   const [days, setDays] = useState(1);

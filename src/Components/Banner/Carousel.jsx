@@ -1,8 +1,6 @@
 import { makeStyles } from '@material-ui/core';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { CryptoState } from '../../CryptoContext';
-import { TrendingCoins } from '../../Config/api';
 import AliceCarousel from 'react-alice-carousel';
 import { Link } from 'react-router-dom';
 import { numberWithCommas } from '../../utils/utils';
@@ -40,8 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Carousel = () => {
   const classes = useStyles();
-  const { symbol, currency } = CryptoState();
-  const [trendingCoins, setTrendingCoins] = useState([]);
+  const { symbol, currency, trendingCoins, fetchTrendingCoins } = CryptoState();
   const carouselResponsive = {
     0: {
       items: 2,
@@ -73,11 +70,6 @@ const Carousel = () => {
       </Link>
     );
   });
-
-  const fetchTrendingCoins = async () => {
-    const { data } = await axios.get(TrendingCoins(currency));
-    setTrendingCoins(data);
-  };
 
   useEffect(() => {
     fetchTrendingCoins();

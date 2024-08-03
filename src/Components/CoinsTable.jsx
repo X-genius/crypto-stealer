@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CoinList } from '../Config/api';
 import { CryptoState } from '../CryptoContext';
-import axios from 'axios';
 import {
   Container,
   createTheme,
@@ -97,18 +95,9 @@ const darkTheme = createTheme({
 const CoinsTable = () => {
   const classes = useStyles();
   const navigator = useNavigate();
-  const [coins, setCoins] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
-  const { symbol, currency } = CryptoState();
-
-  const fetchCoinList = async () => {
-    setLoading(true);
-    const { data } = await axios.get(CoinList(currency));
-    setCoins(data);
-    setLoading(false);
-  };
+  const { symbol, currency, coins, loading, fetchCoinList } = CryptoState();
 
   const handleSearch = () => {
     return coins.filter(
