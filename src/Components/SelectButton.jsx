@@ -6,8 +6,8 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid gold',
     borderRadius: 5,
     padding: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 15,
+    paddingRight: 15,
     fontFamily: 'Montserrat',
     cursor: 'pointer',
     '&:hover': {

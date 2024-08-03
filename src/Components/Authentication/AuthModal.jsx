@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 10,
   },
   LoginButton: {
-    width: 145,
+    width: 85,
     height: 40,
     backgroundColor: '#EEBC1D',
   },
@@ -92,7 +92,7 @@ export default function AuthModal() {
         className={classes.LoginButton}
         onClick={handleOpen}
       >
-        Login/Sign Up
+        Login
       </Button>
       <Modal
         aria-labelledby='transition-modal-title'
