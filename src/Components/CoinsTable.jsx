@@ -79,6 +79,15 @@ const useStyles = makeStyles((theme) => ({
   PaginationList: {
     '& .MuiPaginationItem-root': {
       color: 'gold',
+      [theme.breakpoints.down('md')]: {
+        width: '100%',
+      },
+      [theme.breakpoints.down('sm')]: {
+        width: '100%',
+      },
+      [theme.breakpoints.down('xs')]: {
+        width: '100%',
+      },
     },
   },
 }));
